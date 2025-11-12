@@ -12,6 +12,7 @@ import time
 pi_revisions = {
     "9000c1" : {"model": "Zero W",      "supported": True, "dual_hdmi": False, "hevc": False},
     "a01040" : {"model": "Zero W",      "supported": True, "dual_hdmi": False, "hevc": False},
+    "902120" : {"model": "Zero 2W",     "supported": True, "dual_hdmi": False, "hevc": False},
     "a01041" : {"model": "2B",          "supported": True, "dual_hdmi": False, "hevc": False},
     "a21041" : {"model": "2B",          "supported": True, "dual_hdmi": False, "hevc": False},
     "a22042" : {"model": "2B",          "supported": True, "dual_hdmi": False, "hevc": False},

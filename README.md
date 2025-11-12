@@ -70,7 +70,7 @@ The tables below give you an idea of what to expect with some common video resol
 | H264 854x480@24FPS          | N/A               | N/A            | N/A               | 1 + 6          |
 
 
-You can easely perform your own performance tests by running one of the test configs.
+You can easily perform your own performance tests by running one of the test configs.
 
 ```
 camplayer -c ../tests/test-performance_360pH264-config.ini
@@ -89,7 +89,9 @@ I take no responsibility for leaked footage, leaked credentials, hacked cameras 
 
 ## Installation
 
-The instruction below assume you are running a recent Raspberry Pi OS Lite build.  
+The instructions below assume you are running a recent Raspberry Pi OS Lite build.  
+For Pi Zero 2W the following works with camplayer; https://downloads.raspberrypi.org/raspios_oldstable_lite_armhf/images/raspios_oldstable_lite_armhf-2023-05-03/2023-05-03-raspios-buster-armhf-lite.img.xz
+
 If you are interested in a plug & play system with some additional features, check out [https://www.rpi-camplayer.com/](https://www.rpi-camplayer.com/)
 
 Add the following lines to '/boot/config.txt':  
@@ -124,7 +126,7 @@ Now you can test your install with:
 camplayer --demo
 ```
 
-After you finished your configuration (see next section), you can start camplayer with:  
+After you have finished your configuration (see next section), you can start camplayer with:  
 ```
 sudo systemctl start camplayer.service
 ```
@@ -143,7 +145,7 @@ Press "q" key.
 
 ## Experimental HEVC/H265 support
 You have to install an experimental VLC media player version,  
-please follow the instructions of the following thread.  
+Please follow the instructions in the following thread.  
 https://www.raspberrypi.org/forums/viewtopic.php?f=29&t=257395  
   
 It is important to note that VLC does not support windowed playback at the moment, so you can not create a grid layout of HEVC/H265 streams.
@@ -151,7 +153,7 @@ Once VLC supports this, I will probably drop OMXplayer support and rewrite the w
 
 ## Configuration
 ### Getting started 
-Create and open following file (assumes you are running as user 'pi')  
+Create and open the following file (assumes you are running as user 'pi')  
 ```
 /home/pi/.camplayer/config.ini
 ```
@@ -226,8 +228,8 @@ Check the output of this command for errors and/or warnings.
 
 ## Performance impact
 
-You can experience HDMI signal dropouts and/or video artifacts when your configuration exeeds the capabilities of your Raspberry Pi's GPU.
-It is hard to predict this in advance as it depends on many factors like.
+You can experience HDMI signal dropouts and/or video artefacts when your configuration exceeds the capabilities of your Raspberry Pi's GPU.
+It is hard to predict this in advance as it depends on many factors, like.
 
 * Video resolution and framerate
 * Display resolution
@@ -240,16 +242,16 @@ It is hard to predict this in advance as it depends on many factors like.
 When in trouble, you can reduce the number of windows in the gridview to reduce the performance impact.  
 Other options you can try are:  
 
-* Set advanced setting "streamquality" to "0" (lowest quality)
+* Set the advanced setting "streamquality" to "0" (lowest quality)
 * Set advanced setting "backgroundmode" to "0" (black background)
-* Set advanced setting "screenchangeover" to "0" (normal changeover)
-* Don't set advanced setting "screendownscale"
-* Don't set advanced setting "enablevideoosd"
+* Set the advanced setting "screenchangeover" to "0" (normal changeover)
+* Don't set the advanced setting "screendownscale"
+* Don't set the advanced setting "enablevideoosd"
 * Use a faster/newer Raspberry Pi model
 * Reduce resolution/framerate inside your IP camera configuration
-* Scaling the video resolution to the window resolution comes at a cost, a perfect match is preferred.  
-You can achieve this by chosing your IP camera and/or display resolution carefully.  
-Important to note, upscaling is still better than downscaling performance wise.  
+* Scaling the video resolution to the window resolution comes at a cost; a perfect match is preferred.  
+You can achieve this by choosing your IP camera and/or display resolution carefully.  
+Important to note, upscaling is still better than downscaling performance-wise.  
 
 ## Advanced settings
 
@@ -270,7 +272,7 @@ loglevel            Log level (0=debug, 1=info, 2=warning, 3=error).
 hardwarecheck       Check hardware capabilities on startup (0=off, 1=on).
 backgroundmode      Use background image, pipng install required 
                     (0=black, 1=static grid background, 2=dynamic background, 3=off).
-buffertime          Video buffertime in millisecond.
+buffertime          Video buffertime in milliseconds.
 screenchangeover    Changeover mode with multiple screens (0=normal, 1=fast, 2=smooth).
 icons               Enable loading, paused, ... icons on top of the video (0=off, 1=on).
 streamwatchdog      Check and repair broken video streams interval in seconds (0=off, 1=on).
@@ -279,7 +281,7 @@ streamquality       Stream selection when multiple subchannels are defined
                     (0=lowest quality, 1=automatic, 2=highest quality).
 refreshtime         Refresh streams interval in minutes.
 enablehevc          HEVC/H265 support (0=disable, 1=auto select from hardware, 2=limit to FHD/1080p, 3=force on).
-enableaudio         Enable audio support for fullscreen playing video. (0=off, 1=on when fullscreen).
+enableaudio         Enable audio support for full-screen playing of video. (0=off, 1=on when fullscreen).
 screendownscale     Downscale the used screen area (adds a black border) in percent.
 enablevideoosd      Show channel/camera name on top of each video (0=off, 1=on).
 audiovolume         Default audio volume (0..100).
@@ -302,6 +304,6 @@ letter 'q'          Quit camplayer.
 ## Roadmap
 ### Camplayer 2
 * Improve VLC and drop OMXplayer support, drop code hacks introduced to support them both.
-* Proper windowed H265/HEVC playback, related to previous point.
+* Proper windowed H265/HEVC playback, related to the previous point.
 * PTZ support by calling external scripts.
 * Proper audio support.
